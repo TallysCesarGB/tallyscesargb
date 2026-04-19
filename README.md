@@ -1,4 +1,4 @@
-# Tallys Cesar Gurgel Batista
+# 👨🏻‍💻 Tallys Cesar Gurgel Batista
 
 <table align="center">
   <tr>
@@ -15,8 +15,8 @@
 
 <div align="center">
   <a href="https://github.com/TallysCesarGB">
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=tallyscesargb&show_icons=true&theme=radical" />
-  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tallyscesargb&layout=compact&theme=radical" />
+  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=tallyscesargb&show_icons=true&theme=tokyonight&include_all_commits=true" />
+  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tallyscesargb&layout=compact&theme=tokyonight" />
 </div>
 
 ##
