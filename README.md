@@ -5,7 +5,6 @@
 <div align="center">
   <h1> Tallys Cesar Gurgel Batista 👨🏻‍💻 </h1>
 </div>
-<br>
 
 ### 🤖 Linguagens e Tecnologias
 <img 
