@@ -91,38 +91,18 @@
 
 ### 📊 Estatísticas
 
-<div>
-  <a href="https://github.com/TallysCesarGB">
-      <img height="160em" src="https://github-readme-stats.vercel.app/api?username=tallyscesargb&show_icons=true&theme=tokyonight&include_all_commits=true&locale=pt-br" />
-      <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tallyscesargb&layout=compact&theme=tokyonight&locale=pt-br" />
-  </a>
-</div>
-
-<br>
-
-
 <div align="center">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/output/pacman-contribution-graph-dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/output/pacman-contribution-graph.svg">
-        <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/output/pacman-contribution-graph.svg">
-    </picture>
+  <img src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/trophy-output/trophy.svg" height="150" alt="trophy graph"  />
+  <img src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/stats-output/stats.svg" height="150" alt="stats graph"  />
+  <img src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/languages-output/languages.svg" height="150" alt="languages graph"  />
 </div>
 
-<!--
-<div align="center">
-    <img src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/output/snake.svg" alt="Snake animation" />
-</div>
--->
+###
 
-<br>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/pacman-output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/pacman-output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/pacman-output/pacman-contribution-graph.svg">
+</picture>
 
-##
-
-<div align="center"> 
-  <a href="https://www.youtube.com/@TallysCesarPro" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
-  <a href="https://instagram.com/tallyscesar_pro" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
-  <a href="https://discord.com/channels/1175517244214739006" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a> 
-  <a href = "mailto:tallyscesardev@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-  <a href="https://www.linkedin.com/in/tallys-cesar-1a3aa41b0/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
-</div>
+###
