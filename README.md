@@ -81,6 +81,8 @@
 
 <img src="https://github-profile-trophy.vercel.app?username=tallyscesargb&theme=dracula&column=-1&row=1&margin-w=8&margin-h=8&no-bg=false&no-frame=false&order=4" height="150" alt="trophy graph"  />
 
+  <!--<img src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/trophy-output/trophy.svg" height="150" alt="trophy graph"  />-->
+
 <!--<div align="center">
     
     <img src="https://streak-stats.demolab.com?user=tallyscesargb&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5&order=3" height="150" alt="streak graph"  />
@@ -91,8 +93,7 @@
 
 ### 📊 Estatísticas
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/trophy-output/trophy.svg" height="150" alt="trophy graph"  />
+<div>
   <img src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/stats-output/stats.svg" height="150" alt="stats graph"  />
   <img src="https://raw.githubusercontent.com/tallyscesargb/tallyscesargb/languages-output/languages.svg" height="150" alt="languages graph"  />
 </div>
