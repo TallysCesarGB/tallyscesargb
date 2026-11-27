@@ -2,7 +2,7 @@ name: Generate trophy card
 
 on:
   schedule: # execute every 12 hours
-    - cron: "* */12 * * *"
+    - cron: "50 */12 * * *"
 
   workflow_dispatch:
 
@@ -18,21 +18,33 @@ jobs:
     timeout-minutes: 5
 
     steps:
+      # O GITHUB_TOKEN padrão não consegue ler `organizations` na API GraphQL,
+      # então a consulta do troféu volta `user: null`. É preciso um PAT.
+      - name: check PROFILE_TOKEN
+        env:
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+        run: |
+          if [ -z "$PROFILE_TOKEN" ]; then
+            echo "::error::Crie um Personal Access Token (classic, escopo read:user) e salve como secret PROFILE_TOKEN."
+            exit 1
+          fi
+
       - name: generate trophy.svg
         uses: Erik-Donath/github-profile-trophy@feature/generate-svg
         with:
           username: ${{ github.repository_owner }}
           file: dist/trophy.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PROFILE_TOKEN }}
           theme: dracula
           max-rows: 1
+          max-cols: 7
           margin-width: 8
           margin-height: 8
           no-background: false
           no-frame: false
 
       - name: push trophy.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: trophy-output
           build_dir: dist
