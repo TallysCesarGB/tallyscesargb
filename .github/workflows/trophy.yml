@@ -40,6 +40,14 @@ jobs:
           sed -i 's/userActivity\.organizations\.totalCount/(userActivity.organizations?.totalCount ?? 0)/' src/user_info.ts
           ! grep -n 'organizations(first' src/Schemas/index.ts
 
+      - name: debug graphql
+        env:
+          TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          q=$(sed -n '/queryUserAll = `/,/^`;/p' trophy/src/Schemas/index.ts | sed '1d;$d' | tr '\n' ' ')
+          jq -n --arg q "$q" '{query:$q, variables:{username:"${{ github.repository_owner }}"}}' > body.json
+          curl -s -H "Authorization: bearer $TOKEN" -d @body.json https://api.github.com/graphql | jq '{errors, userIsNull: (.data.user == null)}'
+
       - name: generate trophy.svg
         env:
           GITHUB_TOKEN1: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
