@@ -17,31 +17,41 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
+    env:
+      TROPHY_REPO: Erik-Donath/github-profile-trophy
+      TROPHY_SHA: eb0893b31de06841663555d10aa43eb7cf27952f
+
     steps:
-      # O GITHUB_TOKEN padrão não consegue ler `organizations` na API GraphQL,
-      # então a consulta do troféu volta `user: null`. É preciso um PAT.
-      - name: check PROFILE_TOKEN
-        env:
-          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+      - name: setup deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v1.x
+
+      # O GITHUB_TOKEN padrão não pode ler `organizations` na API GraphQL,
+      # o que faz a consulta devolver `user: null`. Removemos esse campo
+      # (o troféu de organizações fica zerado) para funcionar sem PAT.
+      # Se existir o secret PROFILE_TOKEN, ele é usado no lugar.
+      - name: fetch and patch trophy generator
         run: |
-          if [ -z "$PROFILE_TOKEN" ]; then
-            echo "::error::Crie um Personal Access Token (classic, escopo read:user) e salve como secret PROFILE_TOKEN."
-            exit 1
-          fi
+          git init -q trophy && cd trophy
+          git fetch -q --depth 1 "https://github.com/$TROPHY_REPO" "$TROPHY_SHA"
+          git checkout -q FETCH_HEAD
+          perl -0pi -e 's/\s*organizations\(first: 1\) \{\s*totalCount\s*\}//g' src/Schemas/index.ts
+          sed -i 's/userActivity\.organizations\.totalCount/(userActivity.organizations?.totalCount ?? 0)/' src/user_info.ts
+          ! grep -n 'organizations(first' src/Schemas/index.ts
 
       - name: generate trophy.svg
-        uses: Erik-Donath/github-profile-trophy@feature/generate-svg
-        with:
-          username: ${{ github.repository_owner }}
-          file: dist/trophy.svg
-          token: ${{ secrets.PROFILE_TOKEN }}
-          theme: dracula
-          max-rows: 1
-          max-cols: 7
-          margin-width: 8
-          margin-height: 8
-          no-background: false
-          no-frame: false
+        env:
+          GITHUB_TOKEN1: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p dist
+          deno run --allow-net --allow-env --allow-read --allow-write \
+            trophy/render_svg.ts "${{ github.repository_owner }}" \
+            --file dist/trophy.svg \
+            --theme darkhub \
+            --rows 1 --cols 6 \
+            --margin-width 10 --margin-height 10 \
+            --no-frame
 
       - name: push trophy.svg to the output branch
         uses: crazy-max/ghaction-github-pages@v5
