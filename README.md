@@ -50,7 +50,7 @@ Estudante de **Análise e Desenvolvimento de Sistemas no IFRN** e desenvolvedor 
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TallysCesarGB/tallyscesargb/pacman-output/pacman-contribution-graph-dark.svg">
-    <img alt="Contribuições" src="https://raw.githubusercontent.com/TallysCesarGB/tallyscesargb/pacman-output/pacman-contribution-graph.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TallysCesarGB/tallyscesargb/galaga-output/galaga-contribution-graph-dark.svg">
+    <img alt="Contribuições" src="https://raw.githubusercontent.com/TallysCesarGB/tallyscesargb/galaga-output/galaga-contribution-graph.svg">
   </picture>
 </p>
