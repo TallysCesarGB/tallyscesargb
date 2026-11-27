@@ -38,7 +38,10 @@ jobs:
           git checkout -q FETCH_HEAD
           perl -0pi -e 's/\s*organizations\(first: 1\) \{\s*totalCount\s*\}//g' src/Schemas/index.ts
           sed -i 's/userActivity\.organizations\.totalCount/(userActivity.organizations?.totalCount ?? 0)/' src/user_info.ts
-          ! grep -n 'organizations(first' src/Schemas/index.ts
+          # `stargazers` de outros repositórios também é bloqueado; `stargazerCount` não.
+          perl -0pi -e 's/stargazers \{\s*totalCount\s*\}/stargazerCount/g' src/Schemas/index.ts
+          sed -i 's/node\.stargazers\.totalCount/((node as any).stargazerCount ?? 0)/' src/user_info.ts
+          ! grep -nE 'organizations\(first|stargazers \{' src/Schemas/index.ts
 
       - name: debug graphql
         env:
